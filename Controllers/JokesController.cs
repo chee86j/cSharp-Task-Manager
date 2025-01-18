@@ -73,6 +73,7 @@ namespace Task_Manager.Controllers
         {
             if (ModelState.IsValid)
             {
+                joke.CreatedBy = User.Identity.Name;
                 _context.Add(joke);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
