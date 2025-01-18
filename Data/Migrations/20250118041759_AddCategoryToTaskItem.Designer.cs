@@ -12,8 +12,8 @@ using Task_Manager.Data;
 namespace Task_Manager.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250117014221_initialsetup")]
-    partial class initialsetup
+    [Migration("20250118041759_AddCategoryToTaskItem")]
+    partial class AddCategoryToTaskItem
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -235,11 +235,23 @@ namespace Task_Manager.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("JokeAnswer")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("JokeText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tags")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

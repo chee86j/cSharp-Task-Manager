@@ -5,7 +5,7 @@
 namespace Task_Manager.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class initialssetup : Migration
+    public partial class initialsetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -6,6 +6,8 @@
         public string JokeText { get; set; }
         public string JokeAnswer { get; set; }
         public string CreatedBy { get; set; }
+        public string Category { get; set; }
+        public List<string> Tags { get; set; }
 
         public Joke()
         {
@@ -13,6 +15,8 @@
             JokeText = "";
             JokeAnswer = "";
             CreatedBy = "";
+            Category = "";
+            Tags = new List<string>();
         }
     }
 }
